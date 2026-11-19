@@ -1,0 +1,23 @@
+resource-pack:
+  # Porta do mini-servidor que entrega o resource pack do JEI. Precisa estar liberada no host.
+  # (O ByteUP HUD usa 8766; esta usa 8767.)
+  port: 8767
+  bind: "0.0.0.0"
+  # Endereco que o jogador usa para baixar (IP ou dominio). "auto" = o mesmo endereco que ele digitou para entrar.
+  public-address: "auto"
+  # Obrigar o jogador a aceitar o pack (sem ele a interface aparece como quadradinhos).
+  required: false
+  prompt: "Este servidor usa um pack para mostrar o JEI."
+  # Link externo do pack, para hosts que nao liberam a porta. Vazio = o plugin entrega sozinho.
+  # Com link: suba plugins/ByteUP-JEI/byteup-jei-resource-pack.zip nesse link (download direto).
+  url-externa: ""
+  url-externa-conferir-hash: false
+  # Caminho de um client.jar da mesma versao do servidor. Vazio = baixa da Mojang uma vez.
+  client-jar: ""
+  download-client-jar: true
+
+# Abre o JEI ao usar uma mesa de trabalho (agachado abre a mesa normal).
+open-on-crafting-table: true
+
+# Agachado + tecla de trocar de mao (F por padrao, vale qualquer tecla que o jogador configurou) abre o JEI.
+open-on-sneak-swap-hand: true

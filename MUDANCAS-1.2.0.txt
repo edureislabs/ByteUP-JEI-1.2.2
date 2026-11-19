@@ -1,0 +1,30 @@
+BYTEUP JEI 1.2.0 — RENDERER VANILLA 26.3
+
+- Substitui a GUI de inventário 54 slots por um renderer de pixels usando o Dialog nativo do Minecraft 26.3.
+- Inclui painel gráfico estilo JEI (660x370), abas de categorias, painel lateral 7x9, navegação de receitas e pesquisa por campo nativo.
+- Inclui texturas próprias e gerador de resource pack dentro do plugin.
+- Inclui servidor HTTP embutido para servir o resource pack; o endereço público deve ser configurado em config.yml.
+- Nenhum plugin adicional e nenhum mod no cliente.
+- Corrige o aguardo do resource pack: a tela só abre depois do evento SUCCESSFULLY_LOADED.
+- Paginação das receitas passa de dois em dois resultados, coerente com os dois cartões exibidos.
+
+LIMITE VANILLA:
+A tela é um Dialog próprio aberto por /jei. Um plugin servidor não consegue desenhar dentro da tela de inventário vanilla aberta com E nem interceptar essa tecla. O visual é reproduzido na tela de diálogo nativa.
+
+1.2.1
+- Fundo 660x370 dividido em 6 tiles 220x185 (glifo de fonte nao pode passar de 256x256; era a causa dos quadrados no lugar da interface).
+- Icones: o plugin baixa o client.jar da Mojang (1x), confere quais texturas quadradas existem e usa placeholder nas demais. Antes, textura inexistente podia derrubar a fonte inteira.
+- Corrigido deslocamento de +1px por glifo (avanço do bitmap = largura + 1) em itens e hitboxes.
+- Mesa de trabalho abre o JEI (agachado = mesa normal). Config: open-on-crafting-table.
+- Tecla E / teclas do jogador: impossivel detectar sem mod no cliente (limite do protocolo).
+
+1.2.2
+- Textura refeita do zero (estilo JEI classico) sem texto embutido; novo gerador tools/gen_atlas.py e coordenadas em ui/Layout.java.
+- Causa dos deslocamentos do print: o texto de 663 px passava da largura do corpo (660) e quebrava de linha; agora o corpo tem 720 px.
+- Avanco dos glifos: o jogo corta colunas transparentes a direita; todas as imagens recebem 1 px (alpha 1) na ultima coluna.
+- Cliques: o jogo so testa a LINHA de 9 px sob o mouse; agora cada area clicavel e um espaco invisivel em cada linha coberta.
+- Corpo com 42 linhas (antes ~24, cortava a metade de baixo).
+- Icones copiados do client.jar (recorte do 1o quadro de texturas animadas); sem textura = placeholder.
+- pack.mcmeta igual ao do ByteUP HUD (pack_format 46, supported_formats 22-99).
+- Abre com agachado + trocar de mao (F) alem da mesa de trabalho.
+- Grade de itens 9x9 (81 por pagina).

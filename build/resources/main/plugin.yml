@@ -1,0 +1,18 @@
+name: ByteUP-JEI
+version: '1.2.2'
+main: com.byteup.jei.ByteUpJEI
+api-version: '26.3'
+author: ByteUP
+description: Catálogo visual de itens e navegador de receitas JEI-style para Purpur 26.3, sem mods no cliente.
+commands:
+  jei:
+    description: Abre o ByteUP JEI
+    usage: /jei [busca|item|uses|reload]
+    aliases: [byteupjei]
+permissions:
+  byteupjei.use:
+    description: Permite abrir e usar o ByteUP JEI
+    default: true
+  byteupjei.admin:
+    description: Permite reconstruir o índice e o resource pack do ByteUP JEI
+    default: op
